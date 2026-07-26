@@ -18,7 +18,15 @@ async def main():
     await pool.open(wait=True, timeout=10)
 
     bot_task = asyncio.create_task(bot.start(os.environ["DISCORD_TOKEN"]))
-    await bot.wait_until_ready()
+
+    ready_task = asyncio.create_task(bot.wait_until_ready())
+    done, pending = await asyncio.wait(
+        {bot_task, ready_task}, return_when=asyncio.FIRST_COMPLETED
+    )
+
+    if bot_task in done:
+        bot_task.result()
+
     logger.info("Bot ready — starting scheduler")
 
     scheduler = start_scheduler()
