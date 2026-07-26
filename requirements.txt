@@ -1,0 +1,8 @@
+httpx
+beautifulsoup4
+lxml
+psycopg[binary,pool]
+apscheduler
+discord.py
+tomlkit
+python-dotenv

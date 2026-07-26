@@ -1,0 +1,10 @@
+[alerts.crop.flax]
+above = 2150
+
+[alerts.seed.flax]
+below = 1
+[alerts.seed.carrot]
+below = 350.0
+
+[alerts.carrot.seed]
+below = 351.0

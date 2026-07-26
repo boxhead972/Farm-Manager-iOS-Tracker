@@ -1,0 +1,4 @@
+test_scraper.py
+.env
+__pycache__/
+*.pyc
