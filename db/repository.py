@@ -5,7 +5,7 @@ DATABASE_URL = os.environ["DATABASE_URL"]
 pool = AsyncConnectionPool(
     DATABASE_URL,
     open=False,
-    min_size=1,
+    min_size=0,
     max_size=5,
     timeout=10,
 )
