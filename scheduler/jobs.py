@@ -12,6 +12,6 @@ async def scrape_and_store():
 
 def start_scheduler():
     scheduler = AsyncIOScheduler()
-    scheduler.add_job(scrape_and_store, "interval", minutes=5)
+    scheduler.add_job(scrape_and_store, "interval", minutes=15)
     scheduler.start()
     return scheduler
